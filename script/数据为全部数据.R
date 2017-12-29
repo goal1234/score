@@ -203,7 +203,7 @@
   data_test <-data_test %>%
     group_by(USER_NAME) %>% arrange(enter_date2,USER_NAME)
   
-  #################------------------------------分组排序好不容易------------------------------------##########
+ # 分组排序
   data <-aggregate(data_test$pred,data_test[,c(2,3)],FUN=rank,ties.method=c('first'))
   data$max <-lapply(data$x,max)
   sort <- vector()

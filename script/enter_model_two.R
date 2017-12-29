@@ -38,7 +38,7 @@ plot(1:nrow(data_good),data_good$due_amount)  #时序特征
 
   #多分类的变量模型，还是从logit模型开始
   info_model_two <- read.csv('info_model_two.csv',stringsAsFactors = F)
-  data_good <- all_1[all_1$what==1,]                          #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<可调节参数为业绩好的                                                    #
+  data_good <- all_1[all_1$what==1,]                                                                           #
   data_bad <- data_good[data_good$sort==500,]                                                                                                                  #
   data_good <- data_good[data_good$sort<500,]
   #合并需要的数据
@@ -46,7 +46,7 @@ plot(1:nrow(data_good),data_good$due_amount)  #时序特征
   
   #---------------------EDAdata--------------------------------------
   x <- c('sort','marry_staus1','acdamic_type1','province','age0','due_amount')
-  #需要用acdamic_type和age来代表一个新的东东，或者直接放在x中
+
   data_good1<- data_good1[data_good1$dpd %in% c(4:6),]  
   explore_data <- data_good1[,x]
   summary(explore_data)

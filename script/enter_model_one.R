@@ -31,7 +31,7 @@ rm(info_model_two)
 gc()                                             
 ##################################################################################################################
 tail(all_data)
-data_high <- all_data[all_data$score_category == 'GOOD',]                          #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<可调节参数为业绩好的                                                    
+data_high <- all_data[all_data$score_category == 'GOOD',]                                                                              
 #data_high <- merge(data_high,maxrepay,by.x = "contractno",by.y = "contractno",all.x = T)
 data_bad <- data_high[data_high$sort==500,]                                                                                                                  
 data_good <- data_high[data_high$sort<500,]                                                                                                                  
@@ -44,7 +44,7 @@ data_bad <- data_bad[sample(1*nrow(data_bad),0.2*nrow(data_good),replace = T),] 
 
 #合成数据集最终进入模型中
 data_model <- rbind.data.frame(data_good,data_bad)
-data_model<- data_model[data_model$dpd %in% c(4:6),]       #<<<<<<<<<<<<<<<<<<<<<<<<<<<<账期不同调整
+data_model<- data_model[data_model$dpd %in% c(4:6),]      
 
 #data_model <- data_good
 #data_model<- data_model[data_model$dpd %in% c(4:6),] 

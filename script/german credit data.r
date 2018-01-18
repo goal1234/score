@@ -1,4 +1,4 @@
-
+ 
 # the German Credit Data
 
 # read comma separated file into memory

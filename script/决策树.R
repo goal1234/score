@@ -1,13 +1,12 @@
-data_good <- all_1[all_1$what==1,]                          #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<可调节参数为业绩好的                                                    #
+data_good <- all_1[all_1$what==1,]                                                                              #
 data_bad <- data_good[data_good$sort==500,]                                                                                                                  #
 data_good <- data_good[data_good$sort<500,]                                                                                                                  #
 
 #没有随机种子，每一次运行都发生变化
-data_bad <- data_bad[sample(1*nrow(data_bad),1*nrow(data_good)),]  #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<比例限制
-
+data_bad <- data_bad[sample(1*nrow(data_bad),1*nrow(data_good)),] 
 #合成数据集最终进入模型中
 data_model <- rbind(data_good,data_bad)
-data_model<- data_model[data_model$dpd %in% c(4:6),]       #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<账期不同调整
+data_model<- data_model[data_model$dpd %in% c(4:6),]    
 
 #模型需要的字段选择
 #----------------------------------------------进入选择的数据集为data_model数据框--------------------------------------------------------------------     
